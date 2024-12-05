@@ -1,0 +1,21 @@
+
+.App{
+    background-color: #00e1a9;
+    width: 40% !important;
+    position: absolute !important;
+    top: 10% !important;
+    left: 30% !important;
+    border-radius: 30px !important;
+    padding: 30px 20px !important;
+}
+.subBtn{
+    background-color: black !important;
+    color: white !important;
+    border: none !important;
+}
+.container{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
