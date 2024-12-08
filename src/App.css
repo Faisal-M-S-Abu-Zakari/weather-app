@@ -1,21 +1,419 @@
 
+
 .App{
-    background-color: #00e1a9;
-    width: 40% !important;
-    position: absolute !important;
-    top: 10% !important;
-    left: 30% !important;
-    border-radius: 30px !important;
-    padding: 30px 20px !important;
+    background-image: url(./images/mike-ko-tjod6u2RpiU-unsplash.jpg);
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
 }
-.subBtn{
-    background-color: black !important;
-    color: white !important;
+.weather-page{
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Slightly transparent white for contrast */
+    border-radius: 12px;
+    /* Smooth rounded corners */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3),
+        /* Soft black shadow for depth */
+        0px 4px 6px rgba(0, 0, 0, 0.2);
+    /* Additional inner shadow for layering */
+
+    max-width: 600px;
+    /* Adjust the container width */
+    margin: 20px auto;
+    /* Center the container */
+    border-radius: 20px;
+        
+}
+.leftSearch{
+    background-image: url(./images/tom-barrett-hgGplX3PFBg-unsplash.jpg);
+    /* height: 95vh; */
+    /* width: 100%; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+
+}
+.forcast-title {
+    font-family: 'Arial', sans-serif;
+    /* Clean, modern font */
+    font-size: 36px;
+    /* Larger font for logo */
+    font-weight: 700;
+    /* Bold text for emphasis */
+    color: #fff;
+    /* White text color for contrast */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    /* Light shadow for depth */
+
+    /* Lucid Background */
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Semi-transparent white background */
+    border-radius: 10px;
+    /* Smooth rounded corners */
+
+    /* Box-shadow for depth */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    /* Soft shadow around the title */
+
+    position: absolute;
+    top: 20px;
+    /* Adjusted for better placement */
+    left: 50px;
+    /* Keeps it from touching the edges */
+    padding: 10px 20px;
+    /* Some padding around the text */
+    z-index: 10;
+    /* Ensures it sits above other elements */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+.forcast-title:hover {
+    color: #007bff;
+    /* Change color to blue on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+    /* Stronger shadow on hover */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+.form-control {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    /* Semi-transparent white */
+    color: #333 !important;
+    /* Text color for contrast */
     border: none !important;
+    /* Remove default border */
+    border-radius: 8px !important;
+    /* Smooth rounded edges */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
+    /* Subtle shadow for depth */
+    padding: 10px 15px !important;
+    /* Comfortable spacing */
+    font-size: 16px !important;
+    /* Adjust font size */
+    outline: none !important;
+    /* Remove focus outline */
+    transition: box-shadow 0.3s ease, transform 0.3s ease !important;
+    /* Smooth interactions */
 }
-.container{
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+.forcast-paragraph {
+    font-family: 'Arial', sans-serif;
+    /* Clean font */
+    font-size: 20px;
+    /* Medium font size */
+    font-weight: 500;
+    /* Slightly bold text */
+    color: #c6c6c6;
+    /* Light grey text color for a subtle effect */
+    text-align: center;
+    /* Center the text */
+    margin-bottom: 20px;
+    /* Space below the paragraph */
+    position: relative;
+    /* Required for positioning the line */
+    line-height: 1.5;
+    /* Adjust line height for better readability */
+    text-transform: capitalize;
 }
+
+.forcast-paragraph::after {
+    content: '';
+    /* Empty content to create the line */
+    position: absolute;
+    /* Position the line */
+    left: 50%;
+    /* Center the line horizontally */
+    bottom: -10px;
+    /* Place the line just below the text */
+    transform: translateX(-50%);
+    /* Adjust for perfect centering */
+    width: 50px;
+    /* Line width */
+    height: 2px;
+    /* Line thickness */
+    background-color: #4A90E2;
+    /* Line color */
+    border-radius: 2px;
+    /* Smooth corners for the line */
+}
+
+.form-control:focus {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4) !important;
+    /* Stronger shadow on focus */
+    transform: scale(1.02) !important;
+    /* Slight zoom effect on focus */
+}
+.subBtn {
+    background-color: rgba(0, 123, 255, 0.5) !important;
+    /* Semi-transparent blue background */
+    color: white !important;
+    /* White text color */
+    border: none !important;
+    /* No border */
+    border-radius: 8px !important;
+    /* Rounded corners */
+    padding: 12px 20px !important;
+    /* Comfortable padding */
+    font-size: 16px !important;
+    /* Font size for the button text */
+    cursor: pointer !important;
+    /* Cursor to show it's clickable */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
+    /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease !important;
+    /* Smooth hover effects */
+    outline: none !important;
+    /* Remove the default outline */
+}
+
+.subBtn:hover {
+    background-color: rgba(0, 123, 255, 1) !important;
+    /* Solid blue on hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3) !important;
+    /* Darker shadow on hover */
+    transform: scale(1.05) !important;
+    /* Slight zoom effect on hover */
+}
+
+.subBtn:focus {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4) !important;
+    /* Focus shadow */
+    transform: scale(1.02) !important;
+    /* Slight zoom effect on focus */
+}
+.City-name {
+    font-family: 'Arial', sans-serif;
+    /* Clean, modern font */
+    font-size: 28px;
+    /* Slightly larger font for headings */
+    font-weight: 600;
+    /* Medium boldness */
+    color: #fff;
+    /* White text color for contrast */
+    text-align: center;
+    /* Center the heading */
+    margin-top: 40px;
+    /* Space above the heading */
+    margin-bottom: 15px;
+    /* Space below the heading */
+    line-height: 1.5;
+    /* Adjust line height for better readability */
+
+    /* Lucid Background and Box Shadow */
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Semi-transparent white background */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    /* Soft shadow for depth */
+    padding: 10px 20px;
+    /* Padding inside the heading for better spacing */
+
+
+    padding-bottom: 10px;
+    /* Space below the text for the underline */
+
+    max-width: 300px;
+    /* Limit the width of the heading */
+    margin-left: auto;
+    /* Center the heading horizontally */
+    margin-right: auto;
+    /* Center the heading horizontally */
+    letter-spacing: 1px;
+    /* Slight letter spacing */
+    text-transform: capitalize;
+    /* Capitalize the heading text */
+    transition: all 0.3s ease;
+}
+.City-name:hover {
+    color : #007bff ;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Slightly more opaque background on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+    /* Stronger shadow on hover */
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    
+}
+/* /////////////////////////////////// today component ///////////////////////////// */
+
+.today {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Light semi-transparent background */
+    border-radius: 15px;
+    /* Smooth rounded corners */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    /* Soft shadow for depth */
+    padding: 20px;
+    /* Space inside the container */
+    max-width: 900px;
+    /* Limit the container width */
+    margin: 30px auto;
+    /* Center the container */
+    overflow: hidden;
+    /* Prevent overflow from child elements */
+}
+
+.today>div {
+    display: flex;
+    /* Use flexbox for layout */
+    justify-content: space-between;
+    /* Ensure columns are spaced apart */
+    align-items: center;
+    /* Vertically align items */
+    position: relative;
+    /* Required for the ::after separator */
+}
+
+.today .row {
+    width: 100%;
+    /* Ensure row spans full width */
+    display: flex;
+    /* Flex layout for alignment */
+    justify-content: space-between;
+    /* Equal spacing between columns */
+}
+
+.today .col {
+    flex: 1;
+    /* Equal width for both columns */
+    padding: 15px;
+    /* Add spacing inside the columns */
+    text-align: center;
+    /* Center the text within each column */
+    position: relative;
+    /* Required for individual column styling */
+}
+
+.today .col h1 {
+    font-size: 60px;
+    /* Large font for temperature */
+    font-weight: bold;
+    /* Make the main temperature stand out */
+    color: #FF6F61;
+    /* Warm color for temperature */
+    margin-bottom: 10px;
+    /* Space below temperature */
+}
+
+.today .col h3 {
+    font-size: 24px;
+    /* Sub-heading font size */
+    color: #555;
+    /* Subtle grey color */
+    margin-bottom: 10px;
+    /* Space below sub-heading */
+}
+.today .col div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+}
+.today .col p {  
+    font-size: 16px;
+    /* Regular font size for readability */
+    color: #333;
+    /* Darker grey for better contrast */
+    margin: 5px 0;
+    /* Spacing between spans */
+    align-self: center;
+}
+
+.today .col p span {
+    font-weight: bold;
+    /* Bold values for emphasis */
+    color: #FF6F61;
+    /* Highlighted values */
+}
+
+/* Separator Line Using ::after */
+.today>div::after {
+    content: "";
+    /* Empty content for the line */
+    position: absolute;
+    height: 70%;
+    /* Line height */
+    width: 1px;
+    /* Line thickness */
+    background-color: #ccc;
+    /* Light grey color for the line */
+    left: 50%;
+    /* Center the line between columns */
+    top: 15%;
+    /* Adjust vertical alignment */
+    transform: translateX(-50%);
+    /* Center adjustment for perfect alignment */
+}
+
+/* Hover Effect for Columns */
+.today .col:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Slightly lighter on hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow effect */
+    border-radius: 10px;
+    /* Add slight curve on hover */
+}
+
+/* //////////////////////////////////// Daily /////////////////////////////////////// */
+/* Container Styling */
+.daily-container {
+    background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: auto;
+    /* Center the component */
+}
+
+/* Temperature Styling */
+.temperature {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.degree-symbol {
+    font-size: 36px;
+    vertical-align: top;
+}
+
+/* Weather Condition Styling */
+.condition {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px 0;
+    text-transform: capitalize;
+}
+
+/* Date Styling */
+.date {
+    font-size: 16px;
+    font-weight: 300;
+    color: #f0f8ff;
+    margin-top: 10px;
+}
+
