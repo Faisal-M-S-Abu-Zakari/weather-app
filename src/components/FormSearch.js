@@ -16,7 +16,6 @@ const FormSearch = () => {
     function handelSearch (){
         dispatch(fetchWeather(city))
     }
-    console.log(city);
     useEffect(() => {
         dispatch(fetchWeather("London")); 
         
