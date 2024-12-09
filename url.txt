@@ -1,1 +1,1 @@
-seather-app.surge.sh
+faisal-weather-app.surge.sh
